@@ -21,4 +21,22 @@ public class BankAccount {
         int numberGenerate = random.nextInt(1000) +1;
         return String.format("%04d", numberGenerate);
     }
+
+    public boolean paymentOperation (double paymentAmount) {
+        if (paymentAmount > 0) {
+            balance += paymentAmount;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean depositOperation (double withdrawalAmount) {
+        if (balance >= withdrawalAmount) {
+            balance -= withdrawalAmount;
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
